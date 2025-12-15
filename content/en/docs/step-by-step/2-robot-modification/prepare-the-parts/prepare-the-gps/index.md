@@ -4,22 +4,21 @@ linkTitle: GPS
 weight: 1
 description: >
   Update Firmware and configure the GPS modules.
-tags: [gps, gps-rtk, simplertk2b, zed-f9p, ntrip]
+tags: [gps, gps-rtk, simplertk2b, zed-f9p, ntrip, unicore, um9x, um9xx, um960, um980, um982]
 ---
+
+{{< tabpane text=true >}}
+{{% tab header="**GPS module**:" disabled=true /%}}
+{{% tab header="Ardusimple F9P" %}}
+
+
+## Update Firmware and configure the GPS board
 
 {{% alert title="Info" color="info" %}}
 There is a tutorial video available for this step of the process! <br/>
 Check my YouTube video here: [<i class="fa fa-brands fa-youtube"></i> Video](https://youtu.be/_bImqD-pQSA?t=981)
 (time 16:21 - 17:15)
 {{% /alert %}}
-
-
-## Configure the GPS board
-
-This assumes that you are using the Ardusimple F9P GPS board.
-
-Other GPS receivers are also supported, but need different steps:
-- WitMotion Unicore UM9XX: [wiki](https://wiki.openmower.de/index.php?title=Unicore_GPS_modules), [optional adapter](https://github.com/xtech/hw-openmower-utils/tree/main/hw-openmower-utils-v1-arduino-uno-um9x), [set-up guide](https://wiki.openmower.de/index.php?title=Unicore_GPS_Setup-UART)
 
 
 ### Prerequisites
@@ -74,5 +73,43 @@ Once successful, there will be a timer showing on the upper right side of the wi
 ### Step 2.1.4: Done 🎉
 
 Your GPS is now configured for use with the Open Mower software. You can disconnect it from your Windows PC.
+
+{{% /tab %}}
+
+
+
+{{% tab header="WitMotion Unicore UM9xx" %}}
+
+
+1. Connect your UM9xx to your PC using the supplied USB-C cable
+1. Open a serial terminal (minicom, miniterm, CuteCom, etc.) at 115200 baud
+1. Send `CONFIG`<kbd>⏎ Enter</kbd> to verify the connection. You should see readable key/value style output. If not, check cable, port, and permissions.
+1. Reset and switch the baud rate to 921600 by entering the following commands, line by line:
+   > FRESET<kbd>⏎ Enter</kbd><br>
+   > CONFIG COM1 921600<kbd>⏎ Enter</kbd>
+
+   (After `FRESET` the module may take a few seconds to respond.)
+1. Re-check connection with the simple `CONFIG` command. If you don't get similar results than before, change your serial terminal speed to 921600 baud (re-open if necessary) and run `CONFIG` again, till your get a reasonable response
+1. Apply the rover configuration by entering the following commands, line by line:
+   > MODE ROVER UAV<kbd>⏎ Enter</kbd><br>
+   > GPGSV COM1 2<kbd>⏎ Enter</kbd><br>
+   > GPRMC COM1 1<kbd>⏎ Enter</kbd><br>
+   > GPGSA COM1 1<kbd>⏎ Enter</kbd><br>
+   > GPVTG COM1 1<kbd>⏎ Enter</kbd><br>
+   > GPGST COM1 1<kbd>⏎ Enter</kbd><br>
+   > GPGGA COM1 0.2<kbd>⏎ Enter</kbd><br>
+   > SAVECONFIG<kbd>⏎ Enter</kbd>
+
+   Take attention to the `SAVECONFIG` command, which stores settings so they survive power cycles.
+1. Unplug the USB cable from the UM9x module and mount it to the CarrierBoard (solder required headers first if required).
+
+
+### Alternative Instruction
+
+[wiki](https://wiki.openmower.de/index.php?title=Unicore_GPS_modules), [optional adapter](https://github.com/xtech/hw-openmower-utils/tree/main/hw-openmower-utils-v1-arduino-uno-um9x), [set-up guide](https://wiki.openmower.de/index.php?title=Unicore_GPS_Setup-UART)
+
+{{< /tab >}}
+
+{{< /tabpane >}}
 
 Continue with [Step 2.2: Prepare the SD Card]({{< relref "/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-sd-card" >}})
