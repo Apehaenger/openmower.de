@@ -36,17 +36,17 @@ This Carrierboard is compatible with the following mower models:
 - SABO MOWit 500F (Series-I & II)
 - John Deere Tango E5 (Series-I & II)
 
-|                          Series-I Carrierboard (v0.2)                          |                         Series-II Carrierboard (v0.2)                          |
-| :----------------------------------------------------------------------------: | :----------------------------------------------------------------------------: |
+|                                                      Series-I Carrierboard (v0.2)                                                      |                                                     Series-II Carrierboard (v0.2)                                                      |
+| :------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------: |
 | ![OpenMower-V2 SABO Carrierboard Series-I v0.2]({{< relref "/docs/Knowledge-Base/compatible-mowers" >}}/images/om-sabo-cb-s1-v02.jpg)  | ![OpenMower-V2 SABO Carrierboard Series-II v0.1]({{< relref "/docs/Knowledge-Base/compatible-mowers" >}}/images/om-sabo-cb-s2-v02.jpg) |
-|                   **Series-I (v0.1) @ John Deere Tango E5**                    |                     **Series-II (v0.1) @ Sabo MOWiT 500F**                     |
+|                                               **Series-I (v0.1) @ John Deere Tango E5**                                                |                                                 **Series-II (v0.1) @ Sabo MOWiT 500F**                                                 |
 | ![V0.1 Carrierboard Series-I assembled]({{< relref "/docs/Knowledge-Base/compatible-mowers" >}}/images/johndeere-s1-v01-assembled.jpg) |   ![V0.1 Carrierboard Series-II assembled]({{< relref "/docs/Knowledge-Base/compatible-mowers" >}}/images/sabo-s2-v01-assembled.jpg)   |
 
 These mowers are **well supported**. Even the display controller was replaced by a fully functional, modern user interface!
 
 <div style="padding-bottom: 2.5rem">
 <video width="640" height="360" controls>
-  <source src="{{< relref "/docs/Knowledge-Base/compatible-mowers" >}}/images/sabo-gui.mp4" type="video/mp4">
+  <source src="https://www.shbe.net/openmower/sabo/Sabo_LCD_20251212.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 </div>
