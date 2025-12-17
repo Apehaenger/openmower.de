@@ -5,9 +5,6 @@ weight: 20
 description: >
   Modification Guide for SABO MOWiT 500F / John Deere Tango E5
 ---
-{{% alert title="v2 Hardware Only!" color="warning" %}}
-This guide here is for OpenMower v2.x Hardware only!
-{{% /alert %}}
 
 ## Prerequisites
 
