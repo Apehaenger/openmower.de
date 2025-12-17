@@ -38,17 +38,22 @@ Open the VESC Configuration Tool and connect to the xESC controllers by clicking
 {{% alert title="Information" color="info" %}}
 If you encounter this warning message:
 
-
 ![Warning message]({{< relref "/docs/Knowledge-Base/configure-xesc" >}}/images/Firmware_Version_Warning_Message.png)
 
 you can safely ignore it. The VESC tool is backward compatible with the firmware version used on the xESC controller.
 {{% /alert %}}
 
 
+#### Configure xESC
+
+{{< tabpane text=true >}}
+{{% tab header="**Choose your configuration path**:" disabled=true /%}}
+{{% tab header="Preset configs (Yard Force)" %}}
 
 
 #### Upload the configurations
-{{< image-gallery gallery_dir="images/upload-configurations" >}}
+
+<div class="tab-gallery">{{< image-gallery gallery_dir="images/upload-configurations" >}}</div>
 
 With the VESC Configuration Tool connected, you can now upload the configuration to your xESC controllers:
 - **[Image 1]**: Click `File -> Load Motor Configuration XML`
@@ -62,3 +67,20 @@ With the VESC Configuration Tool connected, you can now upload the configuration
 
 **Repeat these steps for all three of the three xESC controllers.**
 
+{{% /tab %}}
+
+
+{{% tab header="SABO/John Deere (tuning)" %}}
+
+TODO: Merge from Sabo repo
+
+{{% /tab %}}
+
+
+{{% tab header="Custom tuning (new models)" %}}
+
+TODO: Exract from Sabo
+
+{{% /tab %}}
+
+{{< /tabpane >}}
